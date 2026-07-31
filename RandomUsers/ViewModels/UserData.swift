@@ -16,15 +16,7 @@ class UserData {
 
     // Contient le texte JSON récupéré depuis l'API
     // Pour le moment, la valeur est vide
-    var users: String = ""
-
-    init() {
-        // Task permet d'appeler une fonction async
-        // depuis l'initialiseur, qui n'est pas async
-        Task {
-            await loadUsers()
-        }
-    }
+    var users: [User] = []
 
     // Récupère les utilisateurs depuis l'API
     func loadUsers() async {
@@ -33,8 +25,9 @@ class UserData {
             // cette constante locale avec la propriété "users"
             let fetchedUsers = try await UserFetchingClient.getUsers()
 
-            // Met à jour la propriété de la classe
-            self.users = fetchedUsers
+            // La propriété "users" de Response contient le tableau [User]
+            // La clé JSON correspondante est "results"
+            self.users = fetchedUsers.users
 
         } catch {
             // Affiche l'erreur dans la console en cas d'échec

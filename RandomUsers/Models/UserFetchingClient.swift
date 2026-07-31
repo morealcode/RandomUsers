@@ -20,7 +20,7 @@ struct UserFetchingClient {
     // - est async car elle effectue une requête réseau
     // - peut générer une erreur, donc elle utilise throws
     // - retourne le contenu de la réponse sous forme de String
-    static func getUsers() async throws -> String {
+    static func getUsers() async throws -> Response {
 
         // Envoie une requête vers l'URL
         // data contient les données reçues
@@ -37,12 +37,13 @@ struct UserFetchingClient {
             throw URLError(.badServerResponse)
         }
 
-        // Transforme les données reçues en texte UTF-8
-        guard let value = String(data: data, encoding: .utf8) else {
-
-            // Lance une erreur si les données ne peuvent pas être converties
-            throw URLError(.cannotDecodeContentData)
-        }
+        // Transforme les données JSON reçues en objet Swift
+        // Response.self indique le type d'objet que JSONDecoder doit créer
+        // Cette opération peut générer une erreur, donc elle utilise "try"
+        let value = try JSONDecoder().decode(
+            Response.self,
+            from: data
+        )
 
         // Retourne le texte reçu depuis l'API
         return value

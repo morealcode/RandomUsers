@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Response: Decodable {
+// "nonisolated" indique que ce modèle
+// n'appartient pas au MainActor.
+//
+// Il peut donc être décodé depuis n'importe quel contexte,
+// notamment depuis les tests.
+nonisolated struct Response: Decodable {
     let users: [User]
 
     enum CodingKeys: String, CodingKey {
@@ -15,7 +20,7 @@ struct Response: Decodable {
     }
 }
 
-struct User: Decodable, Identifiable {
+nonisolated struct User: Decodable, Identifiable {
     let id: String
     let name: Name
 
@@ -44,7 +49,7 @@ struct User: Decodable, Identifiable {
     }
 }
 
-struct Name: Decodable {
+nonisolated struct Name: Decodable {
     let title: String
     let first: String
     let last: String

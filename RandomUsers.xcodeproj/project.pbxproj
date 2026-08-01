@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EF532BF301D056900C18516 /* testRandomUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF532BE301D056900C18516 /* testRandomUsers.json */; };
+		6EF532D7301E115900C18516 /* testRandomUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF532D4301E115900C18516 /* testRandomUsers.json */; };
+		6EF532D8301E130400C18516 /* testRandomUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF532D4301E115900C18516 /* testRandomUsers.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +32,7 @@
 		6EDC5261301CCC6A004574B2 /* RandomUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDC5273301CCEF1004574B2 /* RandomUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF5329C301D038D00C18516 /* RandomUsersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUsersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EF532BE301D056900C18516 /* testRandomUsers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testRandomUsers.json; sourceTree = "<group>"; };
+		6EF532D4301E115900C18516 /* testRandomUsers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testRandomUsers.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,11 +44,6 @@
 		6EDC5274301CCEF1004574B2 /* RandomUsersTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = RandomUsersTests;
-			sourceTree = "<group>";
-		};
-		6EF5329D301D038D00C18516 /* RandomUsersUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RandomUsersUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -80,10 +76,9 @@
 		6EDC5258301CCC69004574B2 = {
 			isa = PBXGroup;
 			children = (
-				6EF532BE301D056900C18516 /* testRandomUsers.json */,
+				6EF532D4301E115900C18516 /* testRandomUsers.json */,
 				6EDC5263301CCC6A004574B2 /* RandomUsers */,
 				6EDC5274301CCEF1004574B2 /* RandomUsersTests */,
-				6EF5329D301D038D00C18516 /* RandomUsersUITests */,
 				6EDC5262301CCC6A004574B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,9 +154,6 @@
 			dependencies = (
 				6EF532A3301D038D00C18516 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				6EF5329D301D038D00C18516 /* RandomUsersUITests */,
-			);
 			name = RandomUsersUITests;
 			packageProductDependencies = (
 			);
@@ -218,7 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EF532BF301D056900C18516 /* testRandomUsers.json in Resources */,
+				6EF532D7301E115900C18516 /* testRandomUsers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF532D8301E130400C18516 /* testRandomUsers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,18 @@ struct UsersView: View {
     var body: some View {
         NavigationStack {
             List(userData.users) { user in
-                Text(user.fullName)
+                HStack {
+                    AsyncImage(url: URL(string: user.picture.thumbnail)) {
+                        image in
+                        // AsyncImage télécharge et affiche l’image depuis l’URL de manière asynchrone
+                        image.clipShape(Circle())
+                    } placeholder: {
+                        // Cette vue est affichée pendant le chargement de l’image
+                        Image(systemName: "person")
+                            .frame(width: 50, height: 50, alignment: .center)
+                    }
+                    Text(user.fullName)
+                }
             }
             .navigationTitle("Random Users")
         }

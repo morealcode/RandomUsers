@@ -23,6 +23,7 @@ nonisolated struct Response: Decodable {
 nonisolated struct User: Decodable, Identifiable {
     let id: String
     let name: Name
+    let picture: Picture
 
     var fullName: String {
         "\(name.title). \(name.first) \(name.last)"
@@ -31,6 +32,7 @@ nonisolated struct User: Decodable, Identifiable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decode(Name.self, forKey: .name)
+        picture = try values.decode(Picture.self, forKey: .picture)
 
         let loginInfo = try values.nestedContainer(
             keyedBy: LoginInfoCodingKeys.self,
@@ -42,6 +44,7 @@ nonisolated struct User: Decodable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case name
         case login
+        case picture
     }
 
     enum LoginInfoCodingKeys: String, CodingKey {
@@ -55,8 +58,14 @@ nonisolated struct Name: Decodable {
     let last: String
 }
 
+nonisolated struct Picture: Decodable {
+    let large: String
+    let medium: String
+    let thumbnail: String
+}
+
 /*
- API result look like this :
+ Sample data :
 
  {
        "gender": "female",
